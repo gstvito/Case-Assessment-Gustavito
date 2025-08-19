@@ -3,6 +3,8 @@
 import { useState, useEffect } from 'react';
 import Navigation from './components/Navigation';
 import HeroSection from './components/HeroSection';
+import AboutSection from './components/AboutSection';
+import BenefitsSection from './components/BenefitsSection';
 import Footer from './components/Footer';
 
 export default function Home() {
@@ -19,7 +21,11 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-white">
       <Navigation scrollToSection={scrollToSection} />
-      <HeroSection isVisible={isVisible} scrollToSection={scrollToSection} />
+      <section id="home">
+        <HeroSection isVisible={isVisible} scrollToSection={scrollToSection} />
+      </section>
+      <AboutSection />
+      <BenefitsSection />
       <Footer />
     </div>
   );
