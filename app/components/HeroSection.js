@@ -12,6 +12,7 @@ export default function HeroSection({ isVisible, scrollToSection }) {
           Transformasi karir Anda dimulai dari profile LinkedIn yang powerful. Pelajari strategi terbukti untuk membangun personal brand dan menarik peluang terbaik.
         </p>
         <button 
+          onClick={() => scrollToSection('cta')}
           className="bg-blue-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-blue-700 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl focus-ring"
         >
           Daftar Sekarang - Mulai Transformasi! 🚀

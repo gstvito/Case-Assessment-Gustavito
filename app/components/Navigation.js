@@ -2,10 +2,20 @@
 
 export default function Navigation({ scrollToSection }) {
   const navItems = [
-    { text: "Beranda", href: "/" },
+    { text: "Beranda", href: "#home" },
     { text: "Tentang Kami", href: "#about" },
+    { text: "Benefit", href: "#benefits" },
     { text: "Testimoni", href: "#testimonials" }
   ];
+
+  const handleNavClick = (e, href) => {
+    e.preventDefault();
+    const sectionId = href.replace('#', '');
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <nav className="fixed top-0 w-full bg-white/90 backdrop-blur-md shadow-sm z-50">
@@ -19,7 +29,8 @@ export default function Navigation({ scrollToSection }) {
               <a 
                 key={index}
                 href={item.href}
-                className="text-gray-700 hover:text-blue-600 transition-colors font-medium"
+                onClick={(e) => handleNavClick(e, item.href)}
+                className="text-gray-700 hover:text-blue-600 transition-colors font-medium cursor-pointer"
               >
                 {item.text}
               </a>
@@ -28,6 +39,7 @@ export default function Navigation({ scrollToSection }) {
 
           {/* CTA Button */}
           <button 
+            onClick={() => scrollToSection('cta')}
             className="bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition-colors focus-ring"
           >
             Daftar Sekarang
