@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
     <footer className="relative bg-black text-white overflow-hidden">
-      {/* Background Pattern */}
+      {/* Background Effect */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-[#0A66C2] to-[#004182]"></div>
         <div className="absolute top-1/4 left-1/4 w-48 h-48 md:w-64 md:h-64 lg:w-72 lg:h-72 xl:w-96 xl:h-96 bg-white rounded-full filter blur-3xl"></div>
@@ -10,7 +10,7 @@ export default function Footer() {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Brand Section */}
+          {/* Sosial Media dan Brand */}
           <div className="lg:col-span-2 text-center md:text-left">
             <div className="flex items-center justify-center md:justify-start space-x-3 mb-6">
               <div className="text-xl md:text-2xl font-bold text-white drop-shadow-lg">
@@ -34,7 +34,7 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Quick Links */}
+          {/* Link Navigasi */}
           <div className="text-center md:text-left">
             <h3 className="text-lg md:text-xl font-bold mb-4 md:mb-6">Quick Links</h3>
             <ul className="space-y-3 md:space-y-4">
@@ -53,7 +53,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Contact Info */}
+          {/* Informasi Kontak */}
           <div className="text-center md:text-left">
             <h3 className="text-lg md:text-xl font-bold mb-4 md:mb-6">Kontak</h3>
             <div className="space-y-3 md:space-y-4">
@@ -92,7 +92,7 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Bottom Bar */}
+        {/* Bar Copyright */}
         <div className="border-t border-gray-800 mt-8 md:mt-12 pt-6 md:pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 text-center md:text-left">
             <div className="text-gray-400 text-xs md:text-sm">

@@ -3,7 +3,7 @@ export default function AboutSection() {
     <section id="about" className="relative py-16 md:py-20 lg:py-24 overflow-hidden">
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-10 xl:gap-16 items-center">
-          {/* Left Content */}
+          {/* Konten Bagian Kiri */}
           <div className="space-y-6 lg:space-y-8 text-center lg:text-left">
             <div>
               <span className="inline-block px-3 md:px-4 py-2 bg-blue-100 text-[#0A66C2] rounded-full text-sm font-semibold mb-4">
@@ -21,7 +21,7 @@ export default function AboutSection() {
               Kursus "Mastering LinkedIn for Career Growth" dirancang khusus untuk profesional Indonesia yang ingin memaksimalkan potensi LinkedIn untuk mengembangkan karir mereka.
             </p>
 
-            {/* Key Features */}
+            {/* Fitur Utama */}
             <div className="space-y-3 md:space-y-4 max-w-md mx-auto lg:max-w-none">
               {[
                 "Strategi profil yang terbukti meningkatkan visibilitas",
@@ -41,7 +41,7 @@ export default function AboutSection() {
             </div>
           </div>
 
-          {/* Right Content */}
+          {/* Konten Bagian Kanan */}
           <div className="relative mt-8 lg:mt-0">
             <div className="bg-white rounded-2xl md:rounded-3xl shadow-2xl p-4 md:p-6 lg:p-6 xl:p-8 border border-gray-100 max-w-lg mx-auto lg:max-w-md xl:max-w-none">
               <div className="space-y-4 md:space-y-6">

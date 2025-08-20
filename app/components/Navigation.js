@@ -46,7 +46,7 @@ export default function Navigation({ scrollToSection }) {
             </div>
           </div>
           
-          {/* Desktop Navigation Menu */}
+          {/* Menu Navigasi Desktop */}
           <div className="hidden lg:flex items-center space-x-1">
             {navItems.map((item, index) => (
               <a 
@@ -60,7 +60,7 @@ export default function Navigation({ scrollToSection }) {
             ))}
           </div>
 
-          {/* Desktop CTA Button */}
+          {/* Tombol CTA Desktop */}
           <button 
             onClick={() => scrollToSection('cta')}
             className="hidden lg:block relative px-6 py-3 bg-[#0A66C2] text-white rounded-xl font-semibold hover:bg-[#004182] hover:shadow-lg transform hover:scale-105 transition-all duration-200"
@@ -68,7 +68,7 @@ export default function Navigation({ scrollToSection }) {
             Daftar Sekarang
           </button>
 
-          {/* Mobile Hamburger Button */}
+          {/* Tombol Hamburger Mobile */}
           <button 
             onClick={toggleMenu}
             className="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors duration-200"
@@ -82,7 +82,7 @@ export default function Navigation({ scrollToSection }) {
           </button>
         </div>
 
-        {/* Mobile Menu */}
+        {/* Menu Mobile */}
         <div className={`lg:hidden overflow-hidden transition-all duration-300 ${isMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
           <div className="pt-4 pb-2 space-y-2">
             {navItems.map((item, index) => (
@@ -95,7 +95,7 @@ export default function Navigation({ scrollToSection }) {
                 {item.text}
               </a>
             ))}
-            {/* Mobile CTA Button */}
+            {/* Tombol CTA Mobile */}
             <button 
               onClick={() => {
                 scrollToSection('cta');

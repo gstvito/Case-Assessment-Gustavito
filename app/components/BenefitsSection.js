@@ -24,7 +24,7 @@ export default function BenefitsSection() {
     }
   ];
 
-  // Icon components
+  // Komponen Ikon
   const UserIcon = () => (
     <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
       <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
@@ -82,7 +82,7 @@ export default function BenefitsSection() {
               key={index} 
               className="bg-white rounded-xl p-4 md:p-6 lg:p-5 xl:p-6 shadow-lg hover:shadow-xl transition-all duration-300 group hover:-translate-y-2"
             >
-              {/* Icon*/}
+              {/* Ikon */}
               <div className="w-12 h-12 md:w-14 md:h-14 lg:w-12 lg:h-12 xl:w-16 xl:h-16 bg-gradient-to-r from-[#0A66C2] to-[#004182] rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 mx-auto">
                 <div className="scale-75 md:scale-90 lg:scale-75 xl:scale-100">
                   {getIconComponent(benefit.icon)}

@@ -82,7 +82,7 @@ export default function TestimonialsSection() {
             </div>
           </div>
 
-          {/* Navigation Buttons */}
+          {/* Tombol Navigasi Carousel */}
           <button 
             onClick={prevTestimonial}
             className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/20 hover:bg-white/30 text-white p-3 rounded-full transition-all duration-300"
@@ -102,7 +102,7 @@ export default function TestimonialsSection() {
           </button>
         </div>
 
-        {/* Dots Navigation */}
+        {/* Navigasi Dot */}
         <div className="flex justify-center mt-8 space-x-2">
           {testimonials.map((_, index) => (
             <button

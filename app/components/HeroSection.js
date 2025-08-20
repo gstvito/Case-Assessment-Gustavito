@@ -9,23 +9,23 @@ export default function HeroSection({ isVisible, scrollToSection }) {
     >
       <div className="relative max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-16 items-center">
-          {/* Left Content */}
+          {/* Konten Bagian Kiri */}
           <div className="space-y-6 lg:space-y-8 text-center lg:text-left">
-            {/* Main Heading */}
+            {/* Judul Utama */}
             <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight text-gray-800">
               Mastering LinkedIn
               <br />
               <span className="text-[#0A66C2]">for Career Growth</span>
             </h1>
 
-            {/* Sub Heading */}
+            {/* Sub Judul */}
             <p className="text-lg md:text-xl lg:text-xl xl:text-2xl text-gray-600 leading-relaxed px-4 lg:px-0">
               Transformasi karir Anda dimulai dari profile LinkedIn yang
               powerful. Pelajari strategi terbukti untuk membangun personal brand dan
               menarik peluang terbaik.
             </p>
 
-            {/* CTA Buttons */}
+            {/* Tombol CTA */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start px-4 lg:px-0">
               <button
                 onClick={() => scrollToSection("cta")}
@@ -53,37 +53,24 @@ export default function HeroSection({ isVisible, scrollToSection }) {
                 onClick={() => scrollToSection("about")}
                 className="px-6 md:px-8 lg:px-6 xl:px-8 py-3 md:py-4 bg-white text-gray-700 rounded-2xl text-base md:text-lg lg:text-base xl:text-lg font-semibold border-2 border-gray-200 hover:border-[#0A66C2] hover:bg-blue-50 transition-all duration-300 flex items-center justify-center whitespace-nowrap"
               >
-                <svg
-                  className="mr-2 w-4 h-4 md:w-5 md:h-5"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1m4 0h1m-6 4h8m-8 0H6a2 2 0 01-2-2V9a2 2 0 012-2h8a2 2 0 012 2v3a2 2 0 01-2 2H9z"
-                  />
-                </svg>
                 Pelajari Lebih Lanjut
               </button>
             </div>
           </div>
 
-          {/* Right Content - Hero Image */}
+          {/* Konten Bagian Kanan (Gambar) */}
           <div className="relative mt-8 lg:mt-0">
-            {/* Main Image Container */}
+            {/* Kontainer Gambar */}
             <div className="relative z-10 max-w-md md:max-w-lg mx-auto lg:max-w-md xl:max-w-none">
-              {/* Main Image */}
+              {/* Gambar Utama */}
               <div className="relative overflow-hidden rounded-2xl shadow-2xl">
                 <img
-                  src="/hero-image.jpg"
+                  src="/hero_image.jpg"
                   alt="LinkedIn Mastery Course"
                   className="w-full h-[300px] md:h-[400px] lg:h-[380px] xl:h-[450px] object-cover transform hover:scale-105 transition-transform duration-500"
                 />
 
-                {/* Overlay decorative elements */}
+                {/* Elemen overlay */}
                 <div className="absolute top-3 right-3 md:top-4 md:right-4 bg-white/90 backdrop-blur-sm rounded-full p-2 md:p-3 shadow-lg">
                   <div className="w-6 h-6 md:w-8 md:h-8 bg-[#0A66C2] rounded-full flex items-center justify-center">
                     <svg
@@ -98,7 +85,7 @@ export default function HeroSection({ isVisible, scrollToSection }) {
               </div>
             </div>
 
-            {/* Statistics */}
+            {/* Statistik */}
             <div className="mt-6 md:mt-8 grid grid-cols-3 gap-3 md:gap-4 max-w-md md:max-w-lg mx-auto lg:max-w-md xl:max-w-none">
               <div className="bg-white p-3 md:p-4 lg:p-4 xl:p-6 rounded-xl shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
                 <div className="text-lg md:text-xl lg:text-xl xl:text-2xl font-bold text-[#0A66C2]">300%</div>
