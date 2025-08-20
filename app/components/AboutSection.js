@@ -18,7 +18,7 @@ export default function AboutSection() {
             </div>
             
             <p className="text-base md:text-lg lg:text-base xl:text-lg 2xl:text-xl text-gray-600 leading-relaxed px-4 lg:px-0">
-              Kursus "Mastering LinkedIn for Career Growth" dirancang khusus untuk profesional Indonesia yang ingin memaksimalkan potensi LinkedIn untuk mengembangkan karir mereka.
+              Kursus &ldquo;Mastering LinkedIn for Career Growth&rdquo; dirancang khusus untuk profesional Indonesia yang ingin memaksimalkan potensi LinkedIn untuk mengembangkan karir mereka.
             </p>
 
             {/* Fitur Utama */}

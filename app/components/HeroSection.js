@@ -1,4 +1,5 @@
 'use client';
+import Image from 'next/image';
 
 export default function HeroSection({ isVisible, scrollToSection }) {
   return (
@@ -64,9 +65,11 @@ export default function HeroSection({ isVisible, scrollToSection }) {
             <div className="relative z-10 max-w-md md:max-w-lg mx-auto lg:max-w-md xl:max-w-none">
               {/* Gambar Utama */}
               <div className="relative overflow-hidden rounded-2xl shadow-2xl">
-                <img
+                <Image
                   src="/hero_image.jpg"
                   alt="LinkedIn Mastery Course"
+                  width={600}
+                  height={450}
                   className="w-full h-[300px] md:h-[400px] lg:h-[380px] xl:h-[450px] object-cover transform hover:scale-105 transition-transform duration-500"
                 />
 

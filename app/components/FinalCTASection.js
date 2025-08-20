@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 export default function FinalCTASection() {
   return (
     <section id="cta" className="py-8 md:py-12">
@@ -5,9 +7,11 @@ export default function FinalCTASection() {
         <div className="relative">
           {/* Gambar Banner */}
           <div className="relative rounded-xl md:rounded-2xl overflow-hidden shadow-2xl">
-            <img
-              src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+            <Image
+              src="/banner_image.jpg"
               alt="Transform Your LinkedIn Presence"
+              width={2070}
+              height={450}
               className="w-full h-[300px] md:h-[400px] lg:h-[450px] object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-[#0A66C2]/90 to-[#004182]/80"></div>

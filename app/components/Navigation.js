@@ -1,5 +1,6 @@
 'use client';
 import { useState } from 'react';
+import Image from 'next/image';
 
 export default function Navigation({ scrollToSection }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -36,9 +37,11 @@ export default function Navigation({ scrollToSection }) {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center space-x-3 cursor-pointer" onClick={() => handleNavClick(null, '#home')}>
-            <img 
+            <Image 
               src="/logo_belajarlinkedin.png" 
               alt="Belajar LinkedIn Logo" 
+              width={64}
+              height={64}
               className="w-12 h-12 md:w-16 md:h-16 object-contain"
             />
             <div className="text-lg md:text-xl font-bold text-[#0A66C2]">

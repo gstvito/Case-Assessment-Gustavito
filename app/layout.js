@@ -12,7 +12,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Belajar LinkedIn - Mastering LinkedIn for Career Growth",
+  title: "case-assessment-gustavito",
   description: "Kursus LinkedIn terlengkap untuk mengembangkan karir. Pelajari strategi personal branding, networking profesional, dan content marketing di LinkedIn.",
 };
 
