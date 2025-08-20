@@ -65,30 +65,33 @@ export default function BenefitsSection() {
   };
 
   return (
-    <section id="benefits" className="py-20 bg-gray-50">
+    <section id="benefits" className="py-16 md:py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+        <div className="text-center mb-12 md:mb-16">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
             Mengapa Memilih Course Ini?
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto px-4 md:px-0">
             Dapatkan keunggulan kompetitif dengan strategi LinkedIn yang terbukti efektif
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 lg:gap-6 xl:gap-8">
           {benefits.map((benefit, index) => (
             <div 
               key={index} 
-              className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group hover:-translate-y-2"
+              className="bg-white rounded-xl p-4 md:p-6 lg:p-5 xl:p-6 shadow-lg hover:shadow-xl transition-all duration-300 group hover:-translate-y-2"
             >
-              <div className="w-16 h-16 bg-gradient-to-r from-[#0A66C2] to-[#004182] rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                {getIconComponent(benefit.icon)}
+              {/* Icon*/}
+              <div className="w-12 h-12 md:w-14 md:h-14 lg:w-12 lg:h-12 xl:w-16 xl:h-16 bg-gradient-to-r from-[#0A66C2] to-[#004182] rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 mx-auto">
+                <div className="scale-75 md:scale-90 lg:scale-75 xl:scale-100">
+                  {getIconComponent(benefit.icon)}
+                </div>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">
+              <h3 className="text-lg md:text-xl lg:text-lg xl:text-xl font-semibold text-gray-900 mb-3 text-center">
                 {benefit.title}
               </h3>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-sm md:text-base lg:text-sm xl:text-base text-gray-600 leading-relaxed text-center">
                 {benefit.description}
               </p>
             </div>

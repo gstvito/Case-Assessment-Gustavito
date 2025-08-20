@@ -7,39 +7,34 @@ export default function HeroSection({ isVisible, scrollToSection }) {
         isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
       }`}
     >
-      <div className="absolute top-20 right-50 w-72 h-72 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse"></div>
-      <div className="absolute bottom-20 right-180 w-72 h-72 bg-purple-200 rounded-full mix-blend-multiply filter blur-xl opacity-50 animate-pulse"></div>
-
       <div className="relative max-w-7xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-16 items-center">
           {/* Left Content */}
-          <div className="space-y-8">
+          <div className="space-y-6 lg:space-y-8 text-center lg:text-left">
             {/* Main Heading */}
-            <h1 className="text-4xl md:text-6xl font-bold leading-tight text-gray-800">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight text-gray-800">
               Mastering LinkedIn
               <br />
               <span className="text-[#0A66C2]">for Career Growth</span>
             </h1>
 
-            {/* Subtitle */}
-            <p className="text-xl md:text-2xl text-gray-600 leading-relaxed">
+            {/* Sub Heading */}
+            <p className="text-lg md:text-xl lg:text-xl xl:text-2xl text-gray-600 leading-relaxed px-4 lg:px-0">
               Transformasi karir Anda dimulai dari profile LinkedIn yang
-              powerful.
-              <br className="hidden md:block" />
-              Pelajari strategi terbukti untuk membangun personal brand dan
+              powerful. Pelajari strategi terbukti untuk membangun personal brand dan
               menarik peluang terbaik.
             </p>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start px-4 lg:px-0">
               <button
                 onClick={() => scrollToSection("cta")}
-                className="group relative px-8 py-4 bg-[#0A66C2] text-white rounded-2xl text-lg font-semibold shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300 hover:bg-[#004182]"
+                className="group relative px-6 md:px-8 lg:px-6 xl:px-8 py-3 md:py-4 bg-[#0A66C2] text-white rounded-2xl text-base md:text-lg lg:text-base xl:text-lg font-semibold shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300 hover:bg-[#004182] whitespace-nowrap"
               >
-                <span className="relative flex items-center">
+                <span className="relative flex items-center justify-center">
                   Daftar Sekarang
                   <svg
-                    className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform"
+                    className="ml-2 w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-1 transition-transform"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -56,10 +51,10 @@ export default function HeroSection({ isVisible, scrollToSection }) {
 
               <button
                 onClick={() => scrollToSection("about")}
-                className="px-8 py-4 bg-white text-gray-700 rounded-2xl text-lg font-semibold border-2 border-gray-200 hover:border-[#0A66C2] hover:bg-blue-50 transition-all duration-300 flex items-center"
+                className="px-6 md:px-8 lg:px-6 xl:px-8 py-3 md:py-4 bg-white text-gray-700 rounded-2xl text-base md:text-lg lg:text-base xl:text-lg font-semibold border-2 border-gray-200 hover:border-[#0A66C2] hover:bg-blue-50 transition-all duration-300 flex items-center justify-center whitespace-nowrap"
               >
                 <svg
-                  className="mr-2 w-5 h-5"
+                  className="mr-2 w-4 h-4 md:w-5 md:h-5"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -77,22 +72,22 @@ export default function HeroSection({ isVisible, scrollToSection }) {
           </div>
 
           {/* Right Content - Hero Image */}
-          <div className="relative">
-            {/* Main Image Container with improved spacing */}
-            <div className="relative z-10 max-w-lg mx-auto lg:max-w-none">
+          <div className="relative mt-8 lg:mt-0">
+            {/* Main Image Container */}
+            <div className="relative z-10 max-w-md md:max-w-lg mx-auto lg:max-w-md xl:max-w-none">
               {/* Main Image */}
               <div className="relative overflow-hidden rounded-2xl shadow-2xl">
                 <img
                   src="/hero-image.jpg"
                   alt="LinkedIn Mastery Course"
-                  className="w-full h-[400px] object-cover transform hover:scale-105 transition-transform duration-500"
+                  className="w-full h-[300px] md:h-[400px] lg:h-[380px] xl:h-[450px] object-cover transform hover:scale-105 transition-transform duration-500"
                 />
 
                 {/* Overlay decorative elements */}
-                <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full p-3 shadow-lg">
-                  <div className="w-8 h-8 bg-[#0A66C2] rounded-full flex items-center justify-center">
+                <div className="absolute top-3 right-3 md:top-4 md:right-4 bg-white/90 backdrop-blur-sm rounded-full p-2 md:p-3 shadow-lg">
+                  <div className="w-6 h-6 md:w-8 md:h-8 bg-[#0A66C2] rounded-full flex items-center justify-center">
                     <svg
-                      className="w-4 h-4 text-white"
+                      className="w-3 h-3 md:w-4 md:h-4 text-white"
                       fill="currentColor"
                       viewBox="0 0 24 24"
                     >
@@ -104,18 +99,18 @@ export default function HeroSection({ isVisible, scrollToSection }) {
             </div>
 
             {/* Statistics */}
-            <div className="mt-8 grid grid-cols-3 gap-4">
-              <div className="bg-white p-4 rounded-xl shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
-                <div className="text-2xl font-bold text-[#0A66C2]">300%</div>
-                <div className="text-sm text-gray-600">Network Growth</div>
+            <div className="mt-6 md:mt-8 grid grid-cols-3 gap-3 md:gap-4 max-w-md md:max-w-lg mx-auto lg:max-w-md xl:max-w-none">
+              <div className="bg-white p-3 md:p-4 lg:p-4 xl:p-6 rounded-xl shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
+                <div className="text-lg md:text-xl lg:text-xl xl:text-2xl font-bold text-[#0A66C2]">300%</div>
+                <div className="text-xs md:text-sm text-gray-600">Network Growth</div>
               </div>
-              <div className="bg-white p-4 rounded-xl shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
-                <div className="text-2xl font-bold text-[#0A66C2]">5x</div>
-                <div className="text-sm text-gray-600">More Interviews</div>
+              <div className="bg-white p-3 md:p-4 lg:p-4 xl:p-6 rounded-xl shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
+                <div className="text-lg md:text-xl lg:text-xl xl:text-2xl font-bold text-[#0A66C2]">5x</div>
+                <div className="text-xs md:text-sm text-gray-600">More Interviews</div>
               </div>
-              <div className="bg-white p-4 rounded-xl shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
-                <div className="text-2xl font-bold text-[#0A66C2]">50%</div>
-                <div className="text-sm text-gray-600">Salary Increase</div>
+              <div className="bg-white p-3 md:p-4 lg:p-4 xl:p-6 rounded-xl shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
+                <div className="text-lg md:text-xl lg:text-xl xl:text-2xl font-bold text-[#0A66C2]">50%</div>
+                <div className="text-xs md:text-sm text-gray-600">Salary Increase</div>
               </div>
             </div>
           </div>
