@@ -51,8 +51,8 @@
 - **Container**: `max-w-7xl` dengan `mx-auto`
 - **Grid Gap**: `gap-8` untuk desktop, `gap-6` untuk mobile
 
-## Deployment
+## Link Deployment
 
-### 
+**https://case-assessment-gustavito.vercel.app/**
 
 
