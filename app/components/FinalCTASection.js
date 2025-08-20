@@ -1,12 +1,36 @@
+'use client';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
+
 
 export default function FinalCTASection() {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    const section = document.getElementById('cta');
+    if (section) {
+      observer.observe(section);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section id="cta" className="py-8 md:py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="relative">
+        <div className={`relative transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-10 scale-95'}`}>
           {/* Gambar Banner */}
-          <div className="relative rounded-xl md:rounded-2xl overflow-hidden shadow-2xl">
+          <div className="relative rounded-xl md:rounded-2xl overflow-hidden shadow-2xl hover:shadow-3xl transition-shadow duration-500">
             <Image
               src="/banner_image.jpg"
               alt="Transform Your LinkedIn Presence"
@@ -18,18 +42,24 @@ export default function FinalCTASection() {
 
             {/* Overlay konten */}
             <div className="absolute inset-0 flex items-center justify-center">
-              <div className="text-center text-white px-4 md:px-8">
-                <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-4 md:mb-6 leading-tight">
+              <div className={`text-center text-white px-4 md:px-8 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`} style={{ transitionDelay: '300ms' }}>
+                <h2 className={`text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-4 md:mb-6 leading-tight transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`} style={{ transitionDelay: '500ms' }}>
                   Siap Tingkatkan
                   <br />
                   Karir LinkedIn Anda?
                 </h2>
-                <p className="text-sm md:text-lg lg:text-xl mb-6 md:mb-8 text-blue-100 max-w-2xl lg:max-w-3xl mx-auto leading-relaxed px-2">
+                <p className={`text-sm md:text-lg lg:text-xl mb-6 md:mb-8 text-blue-100 max-w-2xl lg:max-w-3xl mx-auto leading-relaxed px-2 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`} style={{ transitionDelay: '700ms' }}>
                   Transformasi karir Anda dimulai dari profile LinkedIn yang
                   powerful. Pelajari strategi terbukti untuk membangun personal
                   brand dan menarik peluang terbaik.
                 </p>
-                <button className="bg-gradient-to-r from-yellow-400 to-orange-400 text-white font-bold py-3 md:py-4 px-8 md:px-12 rounded-xl md:rounded-2xl text-base md:text-lg lg:text-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300">
+                <Link 
+                  href="https://www.linkedin.com/company/belajar-linkedin"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`inline-block bg-gradient-to-r from-yellow-400 to-orange-400 text-white font-bold py-3 md:py-4 px-8 md:px-12 rounded-xl md:rounded-2xl text-base md:text-lg lg:text-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300 group ${isVisible ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-5 scale-95'}`} 
+                  style={{ transitionDelay: '900ms' }}
+                >
                   <span className="relative flex items-center justify-center">
                     Daftar Sekarang
                     <svg
@@ -46,7 +76,7 @@ export default function FinalCTASection() {
                       />
                     </svg>
                   </span>
-                </button>
+                </Link>
               </div>
             </div>
           </div>

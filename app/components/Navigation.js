@@ -17,11 +17,21 @@ export default function Navigation({ scrollToSection }) {
     const sectionId = href.replace('#', '');
     
     if (sectionId === 'home') {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      window.scrollTo({ 
+        top: 0, 
+        behavior: 'smooth' 
+      });
     } else {
       const element = document.getElementById(sectionId);
       if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
+        const headerOffset = 100;
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
       }
     }
     setIsMenuOpen(false); 

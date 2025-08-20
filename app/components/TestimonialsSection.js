@@ -1,8 +1,49 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function TestimonialsSection() {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
+  const [isPlaying, setIsPlaying] = useState(true);
+  const [isVisible, setIsVisible] = useState(false);
+
+  // Deteksi ketika section masuk viewport
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    const section = document.getElementById('testimonials');
+    if (section) {
+      observer.observe(section);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  // Auto play testimonials
+  useEffect(() => {
+    if (!isPlaying) return;
+    
+    const interval = setInterval(() => {
+      setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, [isPlaying]);
+
+  // Fungsi navigasi manual
+  const nextTestimonial = () => {
+    setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
+  };
+
+  const prevTestimonial = () => {
+    setCurrentTestimonial((prev) => prev === 0 ? testimonials.length - 1 : prev - 1);
+  };
 
   const testimonials = [
     {
@@ -28,18 +69,11 @@ export default function TestimonialsSection() {
     }
   ];
 
-  const nextTestimonial = () => {
-    setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
-  };
-
-  const prevTestimonial = () => {
-    setCurrentTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length);
-  };
-
   return (
-    <section id='testimonials' className="py-20 bg-gradient-to-r from-[#0A66C2] to-[#004182]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+    <section id='testimonials' className="py-20 bg-gradient-to-r from-[#0A66C2] to-[#004182] relative overflow-hidden">
+
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className={`text-center mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Apa Kata Alumni Kami?
           </h2>
@@ -49,7 +83,15 @@ export default function TestimonialsSection() {
         </div>
 
         <div className="relative">
-          <div className="bg-white rounded-2xl p-8 md:p-12 shadow-2xl max-w-4xl mx-auto">
+          <div className={`bg-white rounded-2xl p-8 md:p-12 shadow-2xl max-w-4xl mx-auto transition-all duration-700 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
+            {/* Play/Pause Control */}
+            <button 
+              onClick={() => setIsPlaying(!isPlaying)}
+              className="absolute top-4 right-4 w-10 h-10 bg-[#0A66C2] text-white rounded-full flex items-center justify-center hover:bg-[#004182] transition-colors duration-300"
+            >
+              {isPlaying ? '⏸️' : '▶️'}
+            </button>
+
             <div className="flex flex-col md:flex-row items-center gap-8">
               <div className="flex-shrink-0">
                 <div className="w-20 h-20 bg-gradient-to-r from-[#0A66C2] to-[#004182] rounded-full flex items-center justify-center">

@@ -1,6 +1,29 @@
 'use client';
+import { useState, useEffect } from 'react';
 
 export default function BenefitsSection() {
+  const [hoveredCard, setHoveredCard] = useState(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  // Deteksi ketika section masuk viewport
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    const section = document.getElementById('benefits');
+    if (section) {
+      observer.observe(section);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   const benefits = [
     {
       icon: "UserIcon",
@@ -67,7 +90,7 @@ export default function BenefitsSection() {
   return (
     <section id="benefits" className="py-16 md:py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12 md:mb-16">
+        <div className={`text-center mb-12 md:mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
             Mengapa Memilih Course Ini?
           </h2>
@@ -80,10 +103,17 @@ export default function BenefitsSection() {
           {benefits.map((benefit, index) => (
             <div 
               key={index} 
-              className="bg-white rounded-xl p-4 md:p-6 lg:p-5 xl:p-6 shadow-lg hover:shadow-xl transition-all duration-300 group hover:-translate-y-2"
+              className={`bg-white rounded-xl p-4 md:p-6 lg:p-5 xl:p-6 shadow-lg hover:shadow-xl transition-all duration-500 group hover:-translate-y-2 cursor-pointer ${
+                hoveredCard === index ? 'scale-105 ring-2 ring-[#0A66C2]/20' : ''
+              } ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+              style={{ transitionDelay: `${index * 100}ms` }}
+              onMouseEnter={() => setHoveredCard(index)}
+              onMouseLeave={() => setHoveredCard(null)}
             >
-              {/* Ikon */}
-              <div className="w-12 h-12 md:w-14 md:h-14 lg:w-12 lg:h-12 xl:w-16 xl:h-16 bg-gradient-to-r from-[#0A66C2] to-[#004182] rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 mx-auto">
+              {/* Ikon  */}
+              <div className={`w-12 h-12 md:w-14 md:h-14 lg:w-12 lg:h-12 xl:w-16 xl:h-16 bg-gradient-to-r from-[#0A66C2] to-[#004182] rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-all duration-300 mx-auto ${
+                hoveredCard === index ? 'shadow-lg shadow-[#0A66C2]/30' : ''
+              }`}>
                 <div className="scale-75 md:scale-90 lg:scale-75 xl:scale-100">
                   {getIconComponent(benefit.icon)}
                 </div>

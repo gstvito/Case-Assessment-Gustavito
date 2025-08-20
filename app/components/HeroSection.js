@@ -1,7 +1,17 @@
 'use client';
 import Image from 'next/image';
+import { useState } from 'react';
 
 export default function HeroSection({ isVisible, scrollToSection }) {
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleCTAClick = () => {
+    setIsLoading(true);
+    setTimeout(() => {
+      scrollToSection("cta");
+      setIsLoading(false);
+    }, 800);
+  };
   return (
     <section
       className={`relative pt-32 pb-20 px-4 overflow-hidden transform transition-all duration-1000 ${
@@ -29,24 +39,37 @@ export default function HeroSection({ isVisible, scrollToSection }) {
             {/* Tombol CTA */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start px-4 lg:px-0">
               <button
-                onClick={() => scrollToSection("cta")}
-                className="group relative px-6 md:px-8 lg:px-6 xl:px-8 py-3 md:py-4 bg-[#0A66C2] text-white rounded-2xl text-base md:text-lg lg:text-base xl:text-lg font-semibold shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300 hover:bg-[#004182] whitespace-nowrap"
+                onClick={handleCTAClick}
+                disabled={isLoading}
+                className="group relative px-6 md:px-8 lg:px-6 xl:px-8 py-3 md:py-4 bg-[#0A66C2] text-white rounded-2xl text-base md:text-lg lg:text-base xl:text-lg font-semibold shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300 hover:bg-[#004182] whitespace-nowrap disabled:opacity-70 disabled:cursor-not-allowed"
               >
                 <span className="relative flex items-center justify-center">
-                  Daftar Sekarang
-                  <svg
-                    className="ml-2 w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-1 transition-transform"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M13 7l5 5m0 0l-5 5m5-5H6"
-                    />
-                  </svg>
+                  {isLoading ? (
+                    <>
+                      <svg className="animate-spin -ml-1 mr-3 h-4 w-4 md:h-5 md:w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                      </svg>
+                      Loading...
+                    </>
+                  ) : (
+                    <>
+                      Daftar Sekarang
+                      <svg
+                        className="ml-2 w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-1 transition-transform"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M13 7l5 5m0 0l-5 5m5-5H6"
+                        />
+                      </svg>
+                    </>
+                  )}
                 </span>
               </button>
 
@@ -90,17 +113,17 @@ export default function HeroSection({ isVisible, scrollToSection }) {
 
             {/* Statistik */}
             <div className="mt-6 md:mt-8 grid grid-cols-3 gap-3 md:gap-4 max-w-md md:max-w-lg mx-auto lg:max-w-md xl:max-w-none">
-              <div className="bg-white p-3 md:p-4 lg:p-4 xl:p-6 rounded-xl shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
-                <div className="text-lg md:text-xl lg:text-xl xl:text-2xl font-bold text-[#0A66C2]">300%</div>
-                <div className="text-xs md:text-sm text-gray-600">Network Growth</div>
+              <div className="bg-white p-3 md:p-4 lg:p-4 xl:p-6 rounded-xl shadow-lg text-center hover:shadow-xl hover:-translate-y-2 hover:scale-105 transition-all duration-300 cursor-pointer group">
+                <div className="text-lg md:text-xl lg:text-xl xl:text-2xl font-bold text-[#0A66C2] group-hover:text-[#004182] transition-colors duration-300">300%</div>
+                <div className="text-xs md:text-sm text-gray-600 group-hover:text-gray-800 transition-colors duration-300">Network Growth</div>
               </div>
-              <div className="bg-white p-3 md:p-4 lg:p-4 xl:p-6 rounded-xl shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
-                <div className="text-lg md:text-xl lg:text-xl xl:text-2xl font-bold text-[#0A66C2]">5x</div>
-                <div className="text-xs md:text-sm text-gray-600">More Interviews</div>
+              <div className="bg-white p-3 md:p-4 lg:p-4 xl:p-6 rounded-xl shadow-lg text-center hover:shadow-xl hover:-translate-y-2 hover:scale-105 transition-all duration-300 cursor-pointer group">
+                <div className="text-lg md:text-xl lg:text-xl xl:text-2xl font-bold text-[#0A66C2] group-hover:text-[#004182] transition-colors duration-300">5x</div>
+                <div className="text-xs md:text-sm text-gray-600 group-hover:text-gray-800 transition-colors duration-300">More Interviews</div>
               </div>
-              <div className="bg-white p-3 md:p-4 lg:p-4 xl:p-6 rounded-xl shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
-                <div className="text-lg md:text-xl lg:text-xl xl:text-2xl font-bold text-[#0A66C2]">50%</div>
-                <div className="text-xs md:text-sm text-gray-600">Salary Increase</div>
+              <div className="bg-white p-3 md:p-4 lg:p-4 xl:p-6 rounded-xl shadow-lg text-center hover:shadow-xl hover:-translate-y-2 hover:scale-105 transition-all duration-300 cursor-pointer group">
+                <div className="text-lg md:text-xl lg:text-xl xl:text-2xl font-bold text-[#0A66C2] group-hover:text-[#004182] transition-colors duration-300">50%</div>
+                <div className="text-xs md:text-sm text-gray-600 group-hover:text-gray-800 transition-colors duration-300">Salary Increase</div>
               </div>
             </div>
           </div>
