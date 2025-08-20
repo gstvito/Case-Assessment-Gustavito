@@ -3,7 +3,7 @@
 export default function Navigation({ scrollToSection }) {
   const navItems = [
     { text: "Beranda", href: "#home" },
-    { text: "Tentang Kami", href: "#about" },
+    { text: "Tentang", href: "#about" },
     { text: "Benefit", href: "#benefits" },
     { text: "Testimoni", href: "#testimonials" }
   ];

@@ -110,11 +110,11 @@ export default function HeroSection({ isVisible, scrollToSection }) {
                 <div className="text-sm text-gray-600">Network Growth</div>
               </div>
               <div className="bg-white p-4 rounded-xl shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
-                <div className="text-2xl font-bold text-green-500">5x</div>
+                <div className="text-2xl font-bold text-[#0A66C2]">5x</div>
                 <div className="text-sm text-gray-600">More Interviews</div>
               </div>
               <div className="bg-white p-4 rounded-xl shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
-                <div className="text-2xl font-bold text-purple-500">50%</div>
+                <div className="text-2xl font-bold text-[#0A66C2]">50%</div>
                 <div className="text-sm text-gray-600">Salary Increase</div>
               </div>
             </div>

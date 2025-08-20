@@ -6,22 +6,22 @@ export default function TestimonialsSection() {
 
   const testimonials = [
     {
-      name: "Sarah Putri",
-      role: "Marketing Manager at Tokopedia",
+      name: "Gustavito Putra",
+      role: "Web Developer at Belajar LinkedIn",
       image: "/api/placeholder/80/80",
       content: "Course ini benar-benar mengubah cara saya menggunakan LinkedIn. Dalam 3 bulan, saya mendapat 5 job offer dari perusahaan top!",
       rating: 5
     },
     {
-      name: "Ahmad Rizki",
+      name: "Izzati Deva",
       role: "Software Engineer at Gojek",
       image: "/api/placeholder/80/80",
       content: "Materi yang diajarkan sangat praktis dan aplikatif. Sekarang profil LinkedIn saya selalu muncul di pencarian recruiter.",
       rating: 5
     },
     {
-      name: "Diana Sari",
-      role: "Product Manager at Shopee",
+      name: "Fajrul",
+      role: "Front End Developer at Solution Labs",
       image: "/api/placeholder/80/80",
       content: "Investasi terbaik untuk karir saya! Networking yang saya bangun dari course ini membuka banyak peluang baru.",
       rating: 5
@@ -37,7 +37,7 @@ export default function TestimonialsSection() {
   };
 
   return (
-    <section className="py-20 bg-gradient-to-r from-[#0A66C2] to-[#004182]">
+    <section id='testimonials' className="py-20 bg-gradient-to-r from-[#0A66C2] to-[#004182]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
